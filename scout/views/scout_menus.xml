@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="scout_menu_root"
+        name="Scout Members"
+        web_icon="scout,static/description/icon.png"/>
+
+        <menuitem
+            id="scout_menu_dashboard"
+            name="Listing"
+            parent="scout_menu_root"
+            action="scout_scout_action"
+            sequence="5"/>
+
+        <menuitem
+            name="Folders"
+            id="scout_menu_folder"
+            parent="scout_menu_root"
+            action="scout_folder_action_directories"
+            sequence="10"/>
+
+        <menuitem
+            id="scout_menu_share"
+            name="Sharing"
+            parent="scout_menu_root"
+            action="scout_share_action"
+            sequence="15"/>
+
+        <menuitem
+            id="scout_menu_config"
+            name="Configuration"
+            parent="scout_menu_root"
+            groups="document.group_scout_manager"
+            sequence="20"/>
+
+          <!--   <menuitem
+                name="Settings"
+                id="scout_menu_config_settings"
+                parent="scout_menu_config"
+                action="scout_config_settings_action"
+                sequence="1"/> -->
+
+            <menuitem
+                name="Periods"
+                id="scout_menu_config_folder"
+                parent="scout_menu_config"
+                action="scout_period_action"
+                sequence="5"/>
+
+            <menuitem
+                id="scout_menu_config_section"
+                name="Sections"
+                parent="scout_menu_config"
+                action="scout_section_action"
+                sequence="10"/>
+
+</odoo>

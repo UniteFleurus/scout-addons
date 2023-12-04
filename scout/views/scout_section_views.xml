@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--
+        Views
+    -->
+    <record id="scout_section_view_form" model="ir.ui.view">
+        <field name="name">scout.section.view.form</field>
+        <field name="model">scout.section</field>
+        <field name="arch" type="xml">
+            <sheet>
+                    <field name="logo" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Nutons"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="slogan"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="scout_section_view_tree" model="ir.ui.view">
+        <field name="name">scout.section.view.tree</field>
+        <field name="model">scout.section</field>
+        <field name="arch" type="xml">
+            <tree string="Section" sample="1">
+                <field name="name"/>
+                <field name="slogan"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--
+        Actions
+    -->
+    <record id="scout_section_action" model="ir.actions.act_window">
+        <field name="name">Sections</field>
+        <field name="res_model">scout.section</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create a section
+            </p><p>
+            Section is a Scout group.
+            </p>
+        </field>
+    </record>
+
+</odoo>
